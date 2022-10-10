@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', "1")
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', default="False") 
@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'pur_beurre.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_DATABASE", "pur-beurre-db"),
-        "USER": os.environ.get("DB_USERNAME","pur-beurre-db"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "AVNS_t2js0OzgoSJCCryh_X-"),
-        "HOST": os.environ.get("DB_HOSTNAME", "app-83db0b59-6363-4ba8-bc51-d12e9f9f37da-do-user-12578435-0.b.db.ondigitalocean.com"),
-        "PORT": os.environ.get("DB_PORT", "25060"),
+        "NAME": os.environ.get("DB_DATABASE"),
+        "USER": os.environ.get("DB_USERNAME"),
+        "PASSWORD": os.environ.get("DB_PASSWORD"),
+        "HOST": os.environ.get("DB_HOSTNAME"),
+        "PORT": os.environ.get("DB_PORT"),
     }
 }
 
